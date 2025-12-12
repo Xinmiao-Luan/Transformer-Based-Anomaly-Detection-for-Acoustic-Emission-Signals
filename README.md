@@ -84,7 +84,6 @@ ae-transformer-triton-opt/
 │   ├── profile_transformer.py       # GPU profiling and trace logging
 │   └── benchmark_kernels.py         # PyTorch vs Triton performance tests
 │
-├── data/                            # (optional) Example AE/synthetic data
 ├── README.md
 └── requirements.txt                 # torch, pytorch-lightning, triton, numpy...
 ```
