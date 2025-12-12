@@ -1,4 +1,3 @@
-# data/__init__.py
 from .dataset import (
     SyntheticSequenceDataset,
     create_synthetic_dataloaders,
