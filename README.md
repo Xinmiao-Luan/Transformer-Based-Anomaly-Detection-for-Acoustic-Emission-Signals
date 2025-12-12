@@ -69,23 +69,31 @@ Triton provides CUDA-level speed while writing Python-like code.
 # Project Structure
 
 ```
-ae-transformer-triton-opt/
-│
-├── models/
-│   ├── transformer_baseline.py      # PyTorch baseline encoder
-│   └── transformer_triton.py        # Encoder using Triton-accelerated ops
-│
-├── kernels/
-│   ├── qk_matmul_triton.py          # Triton QKᵀ kernel
-│   └── softmax_triton.py            # Triton softmax kernel
-│
-├── scripts/
-│   ├── train_baseline.py            # Train model on AE data
-│   ├── profile_transformer.py       # GPU profiling and trace logging
-│   └── benchmark_kernels.py         # PyTorch vs Triton performance tests
+Transformer-Based Anomaly Detection for Acoustic Emission Signals/
 │
 ├── README.md
-└── requirements.txt                 # torch, pytorch-lightning, triton, numpy...
+├── requirements.txt
+│
+├── data/
+│   ├── __init__.py
+│   └── dataset.py                  # Synthetic + AE spectrogram datasets
+│
+├── models/
+│   ├── __init__.py
+│   ├── transformer_baseline.py     # Baseline TransformerEncoder (PyTorch)
+│   └── transformer_triton.py       # Transformer with Triton attention softmax
+│
+├── kernels/
+│   ├── __init__.py
+│   └── softmax_triton.py           # Triton row-wise softmax kernels
+│
+└── scripts/
+    ├── __init__.py
+    ├── train_synthetic.py          # Train on synthetic sequences
+    ├── train_ae.py                 # Train on AE spectrogram data
+    ├── profile_transformer.py      # Profile transformer with torch.profiler
+    └── benchmark_kernels.py        # Compare PyTorch vs Triton softmax + models
+
 ```
 
 ---
