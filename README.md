@@ -90,7 +90,7 @@ ae-transformer-triton-opt/
 
 ---
 
-## 🔗 Related MATLAB AE Toolbox
+## Related MATLAB AE Toolbox
 
 AE preprocessing (from raw AE binaries to spectrograms) is handled by a separate MATLAB repository:
 
@@ -106,8 +106,8 @@ This transformer project assumes you have already used that toolbox to export **
 
 ### **1. AE Preprocessing**
 
-* Use the AE Data Handler MATLAB toolbox to load and merge AE waveforms from DED (readMultipleFiles, selectData). Extract time windows and convert AE segments into spectrograms (S). For each segment, save a .mat file containing: S: spectrogram [n_freq, n_time] and label: anomaly indicator (0 = normal, 1 = anomaly). Create an index.csv listing each .mat file and label.
-* In Python, the AEAESpectrogramDataset: Loads spectrograms from .mat, applies optional log-scaling + normalization and converts to transformer-ready sequences: [seq_len, input_dim] = [n_time, n_freq]. Pads/truncates to a fixed seq_len. This produces a clean, standardized input format for the models.
+* Use the **AE Data Handler** MATLAB toolbox to load and merge AE waveforms from DED (readMultipleFiles, selectData). Extract time windows and convert AE segments into spectrograms (S). For each segment, save a .mat file containing: S: spectrogram [n_freq, n_time] and label: anomaly indicator (0 = normal, 1 = anomaly). Create an index.csv listing each .mat file and label.
+* In Python, the **AEAESpectrogramDataset**: Loads spectrograms from .mat, applies optional log-scaling + normalization and converts to transformer-ready sequences: [seq_len, input_dim] = [n_time, n_freq]. Pads/truncates to a fixed seq_len. This produces a clean, standardized input format for the models.
 * AE sequences are normalized and padded to fixed lengths.
 
 ---
