@@ -92,7 +92,7 @@ class AEAESpectrogramDataset(Dataset):
     """
     Acoustic Emission spectrogram dataset for DED processes.
 
-    Assumptions:
+    NEED:
       - MATLAB exported spectrograms into .mat files.
       - Each .mat file contains:
             S: [n_freq, n_time] spectrogram magnitude
